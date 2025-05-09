@@ -118,6 +118,8 @@ vim.api.nvim_create_user_command("GenerateTests", function(opts)
       { name = 'nvim_lsp' },
       { name = 'buffer' },
       { name = 'path' },
+      { name = 'luasnip' },   -- Добавьте этот источник для сниппетов
+
     },
     formatting = {
       format = require('lspkind').cmp_format({
