@@ -72,6 +72,7 @@ go install github.com/kisielk/errcheck@latest
 go install honnef.co/go/tools/cmd/staticcheck@latest
 go install github.com/mgechev/revive@latest
 go install github.com/lighttiger2505/sqls@latest
+go install github.com/sshelll/gott/v2@latest
 
 echo "✅ Go tools installed"
 

@@ -149,4 +149,40 @@ vim.keymap.set("n", "<leader>p", function()
     silent = true,
     desc = "Telescope: Find files",
   })
+
+
+  local telescope = require("telescope")
+
+  telescope.setup({
+    extensions = {
+      gott = {
+        test_args = "-v -vet=off",
+        test_args_list = {
+          "-v",
+          '-gcflags="all=-l -N" -v',
+        },
+        timeout = 3000,
+        keep = function()
+          return false
+        end,
+        render = "default",
+        theme = "dropdown",
+        layout_config = {
+          width = 0.2,
+          height = 0.4,
+        },
+        display_with_buf = {
+          enabled = false,
+          modifiable = false,
+          height = 20,
+        },
+      },
+    },
+  })
+  
+  telescope.load_extension("gott")
+  
+  vim.keymap.set("n", "<leader>gt", function()
+    telescope.extensions.gott.gott()
+  end, { desc = "Telescope: Go Test Picker" })
   
